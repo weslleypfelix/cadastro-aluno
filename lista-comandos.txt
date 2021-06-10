@@ -1,0 +1,57 @@
+-- lista de comandos:
+
+na pasta "nodejs-treinamento"
+$ mkdir express-mongodb
+$ cd express-mongodb
+$ mkdir rastro
+$ cd rastro
+
+a pasta "rastro" é a pasta raiz do projeto
+
+$ npm init
+
+dar ENTER em tudo, porém na na opção "entry point" --> app.js
+
+-- instalando o Express
+
+na pasta do "rastro"
+$ npm install express
+$ touch .gitignore
+$ echo "node_modules/" >> .gitignore
+
+-- instalando o Nodemon
+na pasta "rastro"
+$ npm install nodemon --save-dev
+e no arquivo package.json, mudar a linha que tem o atributo "scripts" / "start":
+
+> "start": "nodemon app.js"
+
+-- instalando o Mongoose
+na pasta "rastro"
+$ npm install mongoose
+
+
+-- no MongoDB (no CLI do MongoDB), após criar a coleção 'rastreadores', para criar o indice pelo campo 'codigoRastreador':
+-- limpar a coleção: db.rastreadores.remove()
+> db.rastreadores.ensureIndex( { codigoRastreador: 1 }, { unique: true } )
+> db.rastreadores.getIndexes()
+
+
+-- instalando o 'consign'
+na pasta "rastro"
+$ npm install consign
+
+===================================== PARTE DE LOGIN COM JWT ABAIXO =======================================================================
+
+
+-- instalando o 'properties-reader'
+na pasta "rastro"
+$ npm install properties-reader
+
+-- instalando o 'bcrypt'
+na pasta "rastro"
+$ npm install bcrypt
+
+-- instalando o 'jsonwebtoken'
+na pasta "rastro"
+$ npm install jsonwebtoken
